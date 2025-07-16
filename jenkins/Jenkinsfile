@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Clone Code') {
       steps {
-        git 'https://github.com/yourusername/php-cicd-demo.git'
+        git 'https://github.com/unnip14/testdocker-unni2.git'
       }
     }
 
@@ -31,8 +31,8 @@ pipeline {
 
     stage('Deploy on Server') {
       steps {
-        sshagent(credentials: ['your-ssh-key-id']) {
-          sh 'ssh ubuntu@your-server "docker pull $IMAGE:latest && docker stop phpapp || true && docker rm phpapp || true && docker run -d -p 80:80 --name phpapp $IMAGE:latest"'
+        sshagent(credentials: ['be9e12b9-c6d5-4368-a87e-849283780382']) {
+          sh 'ssh ubuntu@172.31.82.42 "docker pull $IMAGE:latest && docker stop phpapp || true && docker rm phpapp || true && docker run -d -p 80:80 --name phpapp $IMAGE:latest"'
         }
       }
     }
