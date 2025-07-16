@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Clone Code') {
       steps {
-        git 'https://github.com/unnip14/testdocker-unni2.git/main'
+        git url: 'https://github.com/unnip14/testdocker-unni2.git', branch: 'main'
       }
     }
 
