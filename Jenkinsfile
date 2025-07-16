@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    IMAGE = "yourdockerhub/php-cicd-demo"
+    IMAGE = "unnip145/php-cicd-demo"
   }
 
   stages {
