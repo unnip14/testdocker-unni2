@@ -32,7 +32,7 @@ pipeline {
     stage('Deploy on Server') {
       steps {
         sshagent(credentials: ['be9e12b9-c6d5-4368-a87e-849283780382']) {
-          sh 'ssh ubuntu@172.31.82.42 "docker pull $IMAGE:latest && docker stop phpapp || true && docker rm phpapp || true && docker run -d -p 80:80 --name phpapp $IMAGE:latest"'
+          sh 'ssh jenkins@172.31.82.42 "docker pull $IMAGE:latest && docker stop phpapp || true && docker rm phpapp || true && docker run -d -p 80:80 --name phpapp $IMAGE:latest"'
         }
       }
     }
